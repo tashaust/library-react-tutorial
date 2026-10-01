@@ -338,6 +338,7 @@ HIGHLIGHTS
 
 .highlight__img svg {
   border: 2px solid #7342d65d;
+  margin: auto;
   color: #7342d6;
   width: 32px;
   height: 32px;
