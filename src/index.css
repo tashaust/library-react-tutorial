@@ -320,7 +320,6 @@ HIGHLIGHTS
 
 .highlight__wrapper {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .highlight {
@@ -329,6 +328,7 @@ HIGHLIGHTS
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .highlight__para {
@@ -336,11 +336,11 @@ HIGHLIGHTS
   max-width: 280px;
 }
 
-.highlight__img {
+.highlight__img svg {
   border: 2px solid #7342d65d;
   color: #7342d6;
-  width: 100px;
-  height: 100px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
