@@ -2,6 +2,9 @@ import Nav from "./components/nav.jsx";
 import Landing from "./components/landing.jsx";
 import Highlights from "./components/highlights.jsx";
 import Featured from "./components/featured.jsx";
+import Discounted from "./components/discounted.jsx";
+import Explore from "./components/explore.jsx";
+import Footer from "./components/footer.jsx";
 
 function App() {
   return (
@@ -10,7 +13,9 @@ function App() {
       <Landing />
       <Highlights />
       <Featured />
-    
+      <Discounted />
+      <Explore />
+      <Footer />
     </div>
   );
 }
