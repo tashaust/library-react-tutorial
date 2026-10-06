@@ -28,7 +28,31 @@ const BookInfo = ({ books }) => {
                 <div className="book__selected--price">
                  <Price originalPrice={50} salePrice={39.99} /> 
                 </div>
+                <div className="book__summary">
+                  <div className="book__summary--title">
+                    Summary
+                  </div>
+                  <p className="book__summary--para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facilis eum dolor eos dolorum reprehenderit quos eaque velit ad veniam id vero impedit quis, corporis voluptatum, beatae est ab accusamus!
+                  </p>
+                  <p className="book__summary--para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facilis eum dolor eos dolorum reprehenderit quos eaque velit ad veniam id vero impedit quis, corporis voluptatum, beatae est ab accusamus!
+                  </p>
+                </div>
+                <button className="btn">
+                  Add to Cart
+                </button>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="books__conatiner">
+          <div className="row">
+            <div className="books__selected--top">
+              <h2 className="book__selected--title--top">
+                Recommended Books
+              </h2>
             </div>
           </div>
         </div>

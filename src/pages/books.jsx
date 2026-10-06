@@ -5,7 +5,17 @@ const Books = ({ books: initialBooks }) => {
   const [books, setBooks] = useState(initialBooks);
 
   function filterBooks(filter) {
-    console.log(filter)
+      if (filter === "LOW_TO_HIGH") {
+    setBooks([...books].sort((a, b) => a.salePrice - b.salePrice));
+  }
+
+  if (filter === "HIGH_TO_LOW") {
+    setBooks([...books].sort((a, b) => b.salePrice - a.salePrice));
+  }
+
+  if (filter === "RATING") {
+    setBooks([...books].sort((a, b) => b.rating - a.rating));
+  }
   }
   return (
     <div id="books__body">
