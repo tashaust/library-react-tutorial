@@ -3,8 +3,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Rating from '../components/ul/rating';
 import Price from '../components/ul/price';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 const BookInfo = ({ books }) => {
+  const { id } = useParams();
+  const book = books.find(book => +book.id === +id);
+
   return (
     <div id="books__body">
       <main id="books__main">
@@ -20,18 +24,18 @@ const BookInfo = ({ books }) => {
             </div>
             <div className="book__selected">
               <figure className="book__selected--figure">
-                <img src="https://m.media-amazon.com/images/I/61mIq2iJUXL._AC_UF1000,1000_QL80_.jpg" className="book__selected--img" />
+                <img src={book.url} className="book__selected--img" />
               </figure>
               <div className="book__selected--description">
-                <h2 className="book__selected--title">Crack the Coding Interview</h2>
-                <Rating rating="4.5" />
+                <h2 className="book__selected--title">{book.title}</h2>
+                <Rating rating={book.rating} />
                 <div className="book__selected--price">
-                 <Price originalPrice={50} salePrice={39.99} /> 
+                 <Price originalPrice={book.originalPrice} salePrice={book.salePrice} /> 
                 </div>
                 <div className="book__summary">
-                  <div className="book__summary--title">
+                  <h3 className="book__summary--title">
                     Summary
-                  </div>
+                  </h3>
                   <p className="book__summary--para">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facilis eum dolor eos dolorum reprehenderit quos eaque velit ad veniam id vero impedit quis, corporis voluptatum, beatae est ab accusamus!
                   </p>
@@ -49,11 +53,12 @@ const BookInfo = ({ books }) => {
 
         <div className="books__conatiner">
           <div className="row">
-            <div className="books__selected--top">
+            <div className="book__selected--top">
               <h2 className="book__selected--title--top">
                 Recommended Books
               </h2>
             </div>
+            
           </div>
         </div>
       </main>
