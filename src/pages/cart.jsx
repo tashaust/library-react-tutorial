@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cart = () => {
+const Cart = ({ cart, changeQuantity }) => {
   return (
     <div id="books__body">
       <main id="books__main">
@@ -17,18 +17,20 @@ const Cart = () => {
                   <span className="cart__total">Price</span>
                 </div>
                 <div className="cart__body">
-                  <div className="cart__item">
+                  {cart.map((book) => {
+                    return (
+                    <div className="cart__item">
                     <div className="cart__book">
                       <img
-                        src="https://m.media-amazon.com/images/I/61mIq2iJUXL._AC_UF1000,1000_QL80_.jpg"
-                        className="cart__book-img"
-                        alt="Crack the Coding Interview"
+                        src={book.url}
+                        className="cart__book--img"
+                        alt=""
                       />
                       <div className="cart__book--info">
                         <span className="cart__book--title">
-                          Crack the Coding Interview
+                          {book.title}
                         </span>
-                        <span className="cart__book--price">$10.00</span>
+                        <span className="cart__book--price">${(book.salePrice || book.originalPrice).toFixed(2)}</span>
                         <button className="cart__book--remove" type="button">
                           Remove
                         </button>
@@ -40,10 +42,14 @@ const Cart = () => {
                         min={0}
                         max={99}
                         className="cart__input"
+                        onChange={(event) => changeQuantity(event.target.value)}
                       />
                     </div>
                     <div className="cart__total">$10.00</div>
                   </div>
+                    )
+                  })
+                  }
                 </div>
               </div>
             </div>
