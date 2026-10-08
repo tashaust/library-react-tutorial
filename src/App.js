@@ -24,6 +24,10 @@ function App() {
   );
 }
 
+function removeItem(item) {
+  setCart(cart.filter(book => book.id !== item.id))
+}
+
   useEffect(() => {
     console.log(cart);
   }, [cart]);
@@ -37,7 +41,11 @@ function App() {
         <Route
           path="/books/:id"
           render={() => <BookInfo books={books} addToCart={addToCart} cart={cart} />} />
-        <Route path="/cart" render={() => <Cart books={books} cart={cart} changeQuantity={changeQuantity} />} />
+        <Route path="/cart" render={() => <Cart 
+        books={books} 
+        cart={cart} 
+        changeQuantity={changeQuantity}
+        removeItem={removeItem}/>} />
         <Footer />
       </div>
     </Router>
