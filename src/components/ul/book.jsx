@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import Rating from './rating';
-import Price from './price';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import Rating from "./rating";
+import Price from "./price";
 
 const Book = ({ book }) => {
   const [img, setImg] = useState();
@@ -21,7 +21,7 @@ const Book = ({ book }) => {
     };
     return () => {
       mountedRef.current = false;
-  }
+    };
   });
 
   return (
@@ -39,7 +39,10 @@ const Book = ({ book }) => {
             </Link>
           </div>
           <Rating rating={book.rating} />
-          <Price originalPrice={book.originalPrice} salePrice={book.salePrice} />
+          <Price
+            originalPrice={book.originalPrice}
+            salePrice={book.salePrice}
+          />
         </>
       ) : (
         <>
