@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EmptyCart from "../assets/empty_cart.svg"
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Cart = ({ cart, changeQuantity, removeItem }) => {
    const total = () => {
@@ -71,10 +72,19 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
               );
             })}
           </div>
-          <div className="cart__empty">
+          {
+            cart.length === 0 && (
+            <div className="cart__empty">
             <img src={EmptyCart} className="cart__empty--img" />
+            <h2>You don't have any books in your cart!</h2>
+            <Link to="/books">
+            <button className="btn">Browse books</button>
+            </Link>
           </div>
+            )
+          }
         </div>
+     {cart.length > 0 && (
       <div className="total">
         <div className="total__item total__sub-total">
           <span>Subtotal</span>
@@ -95,6 +105,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
           Proceed to Checkout
         </button>
       </div>
+    )}
     </div>
   </div>
 </main>
