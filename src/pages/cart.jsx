@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import EmptyCart from "../assets/empty_cart.svg"
 
 const Cart = ({ cart, changeQuantity, removeItem }) => {
    const total = () => {
@@ -14,9 +15,8 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
   <div className="books__container">
     <div className="row">
       <div className="book__selected--top">
-        <div className="cart__title">
           <h2 className="cart__title">Cart</h2>
-        </div>
+          </div>
         <div className="cart">
           <div className="cart__header">
             <span className="cart__book">Book</span>
@@ -71,8 +71,10 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
               );
             })}
           </div>
+          <div className="cart__empty">
+            <img src={EmptyCart} className="cart__empty--img" />
+          </div>
         </div>
-      </div>
       <div className="total">
         <div className="total__item total__sub-total">
           <span>Subtotal</span>
